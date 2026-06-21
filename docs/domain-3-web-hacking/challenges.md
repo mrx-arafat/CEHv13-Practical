@@ -1,6 +1,12 @@
-# Domain 3: Challenge Examples
+# Domain 3: Web Server & Application Hacking - Challenge Examples
 
-See [all-challenges.md](../../challenges/all-challenges.html) for complete examples.
+**Complete Challenge Reference:** [See All 20 Challenges](../../challenges/all-challenges.html)
+
+---
+
+### About Domain 3 Challenges
+
+Challenges in this domain focus on web application vulnerabilities including SQL injection, parameter tampering, and web server exploitation.
 
 ## Domain-Specific Challenges
 
