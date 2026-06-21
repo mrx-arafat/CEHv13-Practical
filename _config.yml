@@ -8,7 +8,7 @@ description: >-
   20 challenges, 7 domains, 85+ security tools with command syntax and real examples.
 author: Easin Arafat
 email: arafatmrx@gmail.com
-url: https://ceh-v13-prep.local
+url: https://mrx-arafat.github.io
 
 # Theme: Just the Docs (remote theme via GitHub Pages)
 remote_theme: just-the-docs/just-the-docs
@@ -23,7 +23,7 @@ kramdown:
     css_class: highlight
 
 # Build & deployment
-baseurl: ""
+baseurl: "/CEHv13-Practical"
 source: .
 destination: _site
 incremental: false
