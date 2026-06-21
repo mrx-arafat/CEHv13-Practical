@@ -1,5 +1,0 @@
-# This workflow is intentionally empty to prevent GitHub's automatic Pages workflow
-# from interfering with our custom pages.yml workflow
-name: Disable Auto Pages
-
-on: []
