@@ -309,9 +309,9 @@ nslookup 192.168.1.5
 ## See Also
 
 - **[Commands Reference](commands.html)** - All Domain 1 commands
-- **[Challenges](challenges.html)** - Real exam challenge examples
+- **[Challenges](../challenges/all-challenges.html)** - Real exam challenge examples
 - **[Back to Index](../index.html)**
 
 ---
 
-**Next Step:** Review [commands.md](commands.html) to practice syntax, then work through [challenges.md](challenges.html) for real examples.
+**Next Step:** Review [commands](commands.html) to practice syntax, then work through [challenges](../challenges/all-challenges.html) for real examples.

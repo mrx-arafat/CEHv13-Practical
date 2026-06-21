@@ -4,7 +4,7 @@ title: Domain 6 - Traffic Analysis & Sniffing
 parent: Domains
 nav_order: 6
 description: "Wireshark packet analysis, Tcpdump capture, protocol inspection, and DDoS detection."
-has_children: true
+has_children: false
 ---
 
 # Domain 6: Traffic Analysis & Sniffing
@@ -242,10 +242,10 @@ tshark -r capture.pcapng -Y "mqtt.msgtype == 3" -T fields -e mqtt.topic
 
 ## See Also
 
-- **[Challenges](challenges.html)**
+- **[Challenges](../challenges/all-challenges.html)**
 - **[Domain 2: System Hacking](../domain-2-system-hacking/)** - RAT detection
 - **[QUICK-START.md](../QUICK-START.html)** - Common filters
 
 ---
 
-**Next Step:** Practice [challenges.md](challenges.html)
+**Next Step:** Practice [challenges](../challenges/all-challenges.html)

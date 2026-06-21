@@ -4,7 +4,7 @@ title: Domain 4 - Cryptography & Steganography
 parent: Domains
 nav_order: 4
 description: "Hash cracking, steganography extraction, and PE file analysis with Hashcat and DIE."
-has_children: true
+has_children: false
 ---
 
 # Domain 4: Cryptography & Steganography
@@ -151,9 +151,9 @@ veracrypt --mount /dev/sdb1 /mnt/encrypted --password=PASSWORD
 
 ## See Also
 
-- **[Challenges](challenges.html)**
+- **[Challenges](../challenges/all-challenges.html)**
 - **[Domain 2: System Hacking](../domain-2-system-hacking/)**
 
 ---
 
-**Next Step:** Practice [challenges.md](challenges.html)
+**Next Step:** Practice [challenges](../challenges/all-challenges.html)

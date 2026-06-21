@@ -4,7 +4,7 @@ title: Domain 3 - Web Server & Application Hacking
 parent: Domains
 nav_order: 3
 description: "SQL injection, web directory enumeration, parameter tampering, and WordPress exploitation."
-has_children: true
+has_children: false
 ---
 
 # Domain 3: Web Server & Application Hacking
@@ -101,10 +101,10 @@ wpscan --url http://target.com -U admin -P rockyou.txt    # Brute force
 
 ## See Also
 
-- **[Challenges](challenges.html)**
+- **[Challenges](../challenges/all-challenges.html)**
 - **[Domain 1: Network Scanning](../domain-1-network-scanning/)**
 - **[Domain 4: Cryptography](../domain-4-cryptography/)**
 
 ---
 
-**Next Step:** Practice [challenges.md](challenges.html)
+**Next Step:** Practice [challenges](../challenges/all-challenges.html)

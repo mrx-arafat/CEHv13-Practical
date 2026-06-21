@@ -4,7 +4,7 @@ title: Domain 5 - Mobile & IoT Security
 parent: Domains
 nav_order: 5
 description: "Android device access via ADB, steganography extraction, and mobile database analysis."
-has_children: true
+has_children: false
 ---
 
 # Domain 5: Mobile & IoT Security
@@ -171,10 +171,10 @@ exiftool image.jpg | grep -i "gps\|date"
 
 ## See Also
 
-- **[Challenges](challenges.html)**
+- **[Challenges](../challenges/all-challenges.html)**
 - **[Domain 4: Cryptography](../domain-4-cryptography/)**
 - **[Domain 6: Traffic Analysis](../domain-6-traffic-analysis/)**
 
 ---
 
-**Next Step:** Practice [challenges.md](challenges.html)
+**Next Step:** Practice [challenges](../challenges/all-challenges.html)

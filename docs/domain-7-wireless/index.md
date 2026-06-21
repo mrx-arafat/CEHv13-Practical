@@ -4,7 +4,7 @@ title: Domain 7 - Wireless Network Cracking
 parent: Domains
 nav_order: 7
 description: "WPA/WPA2 password cracking and wireless network penetration testing with Aircrack-ng."
-has_children: true
+has_children: false
 ---
 
 # Domain 7: Wireless Network Cracking
@@ -88,9 +88,9 @@ airmon-ng stop wlan0mon
 
 ## See Also
 
-- **[Challenges](challenges.html)**
+- **[Challenges](../challenges/all-challenges.html)**
 - **[QUICK-START.md](../QUICK-START.html)** - Time management
 
 ---
 
-**Next Step:** Practice [challenges.md](challenges.html)
+**Next Step:** Practice [challenges](../challenges/all-challenges.html)

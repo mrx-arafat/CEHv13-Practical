@@ -218,10 +218,10 @@ Look for: Reverse TCP connection, unusual port, long duration
 ## See Also
 
 - **[Commands Reference](commands.html)** - Hydra, Metasploit syntax
-- **[Challenges](challenges.html)** - Real RDP cracking examples
+- **[Challenges](../challenges/all-challenges.html)** - Real RDP cracking examples
 - **[Domain 1: Scanning](../domain-1-network-scanning/)**
 - **[Domain 6: Traffic Analysis](../domain-6-traffic-analysis/)** - RAT detection
 
 ---
 
-**Next Step:** Review [commands.md](commands.html), then practice [challenges.md](challenges.html)
+**Next Step:** Review [commands](commands.html), then practice [challenges](../challenges/all-challenges.html)
