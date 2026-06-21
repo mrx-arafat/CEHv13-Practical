@@ -89,7 +89,7 @@ callouts:
     color: yellow
   warning:
     title: Warning
-    color: orange
+    color: yellow
   failure:
     title: Failure
     color: red
@@ -104,7 +104,7 @@ callouts:
     color: purple
   quote:
     title: Quote
-    color: grey
+    color: grey-dk
 
 # Exclude from build
 exclude:
