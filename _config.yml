@@ -1,0 +1,41 @@
+# Jekyll Configuration for GitHub Pages
+
+title: CEH v13 Practical Exam - Complete Study Manual
+description: Comprehensive open-book reference guide for CEH v13 Practical Exam (20 challenges, 7 domains, 85+ tools)
+author: Your Name
+email: reduan@wpdeveloper.com
+
+# GitHub Pages settings
+remote_theme: just-the-docs/just-the-docs
+markdown: kramdown
+
+# Navigation
+nav_order: 1
+has_children: false
+
+# Color scheme (light or dark)
+color_scheme: light
+
+# Search
+search_enabled: true
+search.heading_level: 2
+
+# Footer
+footer_content: "CEH v13 Practical Exam Study Guide | 20 Challenges | 7 Domains | 85+ Tools"
+
+# Exclude from Jekyll
+exclude:
+  - .gitignore
+  - README.md
+  - LICENSE
+  - notes/
+  - '*.pdf'
+
+# Collections
+collections:
+  domains:
+    output: true
+    permalink: /:collection/:path/
+  challenges:
+    output: true
+    permalink: /:collection/:path/
