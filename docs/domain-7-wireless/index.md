@@ -13,8 +13,6 @@ has_children: false
 
 WiFi networks protect data with encryption (scrambling so outsiders can't read it). To test a network's security, you capture the moment a device connects, then try to guess the password offline. Learning this is essential for penetration testing.
 
-> **In plain English:** You record a device joining the WiFi, then run a wordlist against that recording until the password pops out.
-
 **Key Topics:**
 - WPA/WPA2 password cracking
 - Wireless attack workflow (5 steps)

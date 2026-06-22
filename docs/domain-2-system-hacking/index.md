@@ -50,8 +50,6 @@ A **Remote Access Trojan (RAT)** is malware that gives an attacker complete remo
 
 ### Attack Chain
 
-> **In plain English:** This is the life cycle of a break-in — get in, stay in, talk to home base, run commands, steal data.
-
 ```
 Phase 1: Initial Access
 └─ Attacker delivers payload (email, website, exploit)

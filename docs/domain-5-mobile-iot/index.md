@@ -35,8 +35,6 @@ Mobile devices and IoT systems often store sensitive data. Learning to extract a
 
 **ADB (Android Debug Bridge)** is a command-line tool to interact with Android devices for development, testing, and debugging.
 
-> **In plain English:** ADB is like a remote control for an Android phone from your computer — you can list files, copy them off, run apps, and read logs over USB or Wi-Fi.
-
 ### Connecting to Devices
 
 This is how you get your computer talking to the phone. USB just works once plugged in; Wi-Fi needs the phone to "listen" on a port (5555) first, then you connect to its IP address.
@@ -203,8 +201,6 @@ exiftool image.jpg | grep -i "gps\|date"
 ### What It Does
 
 An APK (an Android app's install file) is just a ZIP archive of code and resources. Pulling it apart lets you read the app's permissions, configuration, and — the usual exam goal — **hardcoded secrets** the developer left inside (API keys, passwords, URLs).
-
-> **In plain English:** the app ships with its own source baked in. Unzip it, decompile it, and read the developer's secrets straight off the page.
 
 ### Get the APK off the Device
 

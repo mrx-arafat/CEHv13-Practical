@@ -13,8 +13,6 @@ has_children: false
 
 Network traffic contains everything: passwords, commands, data exfiltration, attacker communications. Analyzing this traffic reveals the full attack picture.
 
-> **In plain English:** Every conversation between computers travels as packets (small chunks of data). This domain is about reading a saved recording of those packets — a PCAP (a captured file of network traffic) — to find what an attacker did, like reviewing security-camera footage frame by frame.
-
 **Key Topics:**
 - Wireshark packet analysis and filtering
 - Tcpdump command-line capture

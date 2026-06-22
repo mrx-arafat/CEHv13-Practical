@@ -32,8 +32,6 @@ Network scanning is the foundation of every penetration test. You need to discov
 ### What It Does
 Finds which IP addresses have a real machine answering on them. You point it at a whole range of addresses, and it tells you which ones are alive — so you don't waste time poking at empty addresses.
 
-> **In plain English:** It's a roll call — you shout "who's there?" across the network and note who answers.
-
 ### NMAP Ping Scan
 ```bash
 nmap -sn 192.168.1.0/24
@@ -74,8 +72,6 @@ Host is up (0.0045s latency).
 
 ### What It Does
 A port (a numbered "door" a service listens on) is how machines offer things like web pages or file sharing. Port scanning knocks on those doors to see which are open and what's behind them.
-
-> **In plain English:** Host discovery found which houses have people home; port scanning checks which doors and windows are unlocked.
 
 ### The Three Main Scan Types
 
@@ -188,8 +184,6 @@ nmap -A -T4 -p- 192.168.1.5
 
 ### What It Does
 SMB (Server Message Block — the protocol Windows uses to share files, printers, and folders) often hands over user names, shared folders, and domain details, sometimes without any password at all. This step squeezes that info out of it.
-
-> **In plain English:** It's like reading the names on every mailbox and which doors are unlocked in a Windows apartment building.
 
 #### NMAP SMB Scripts
 

@@ -192,8 +192,6 @@ veracrypt --mount volume.hc /mnt/encrypted --password=test
 
 These are Windows GUI tools used in CEH iLabs encryption challenges. Each gives you a file/text + a password; you produce the plaintext (the original readable content).
 
-> **In plain English:** all three do the same thing — take scrambled data plus the right password and hand back the readable original. They just handle different formats: AES Tool for `.aes` files, BCTextEncoder for blocks of encoded text, CrypTool for picking a specific algorithm.
-
 ### AES Tool — Decrypt a `.aes` File
 
 > **Goal:** decrypt an `.aes` file. **Password:** `qwerty`
