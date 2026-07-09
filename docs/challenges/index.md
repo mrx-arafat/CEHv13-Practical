@@ -63,12 +63,3 @@ All 20 practical challenges in exam sequence. Pass mark = **14 / 20 (70%)** in *
 | 6 — Traffic Analysis | 10, 12, 18, 19 |
 | 7 — Wireless | 20 |
 
----
-
-## Time Strategy (6 hours = 360 min)
-
-1. **Bank the Easy four first** (1, 2, 8, 20) → ~45 min, quick points.
-2. **Work the Medium block** (12 challenges) → most of your time.
-3. **Save the Hard four for last** (10, 13, 17, 19) → only if time allows.
-
-Target 14/20 to pass — pick the challenges you are fastest at, leave buffer to re-check answer formats.

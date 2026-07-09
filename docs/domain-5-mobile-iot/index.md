@@ -299,6 +299,266 @@ webcam city:"London"           # Exposed webcams in a location
 
 ---
 
+## 5.6 ADB Complete Reference — Essential Commands for Exam
+
+### Device Management
+
+```bash
+# List all connected devices
+adb devices
+
+# List devices with details
+adb devices -l
+
+# Connect to device via USB
+adb shell  # Once connected, opens shell on device
+
+# Connect via TCP/IP (wireless)
+adb tcpip 5555
+adb connect 192.168.1.100:5555
+
+# Disconnect specific device
+adb disconnect 192.168.1.100:5555
+
+# Reboot device
+adb reboot
+adb reboot recovery
+adb reboot bootloader
+```
+
+### Shell Commands (Most Critical for Exam)
+
+```bash
+# Run shell command on device
+adb shell [command]
+
+# Examples:
+adb shell whoami                    # Current user
+adb shell id                        # User ID & groups
+adb shell pwd                       # Current directory
+adb shell ls /data/data/            # List installed app folders
+adb shell ps                        # List running processes
+adb shell netstat                   # Active connections
+adb shell cat /etc/passwd           # User accounts (if readable)
+adb shell cat /proc/version         # Kernel version
+```
+
+### Package Installation & Management
+
+```bash
+# Install APK
+adb install app.apk
+
+# Force install over existing
+adb install -r app.apk
+
+# Uninstall app
+adb uninstall com.example.app
+
+# List installed packages
+adb shell pm list packages
+
+# List user-installed packages only
+adb shell pm list packages -3
+
+# Get APK path of installed app
+adb shell pm path com.example.app   # Returns: /data/app/.../base.apk
+```
+
+### File Transfer
+
+```bash
+# Push file from computer to device
+adb push localfile.txt /sdcard/
+adb push backup.zip /data/local/tmp/
+
+# Pull file from device to computer
+adb pull /sdcard/photos/image.jpg ./
+adb pull /data/app/ ./apps_backup/   # Pull entire directory
+
+# Remove files on device
+adb shell rm /sdcard/file.txt
+adb shell rm -rf /data/local/tmp/    # Remove directory
+```
+
+### Application Launching & Interaction
+
+```bash
+# Launch app by package name & activity
+adb shell am start -n com.example.app/.MainActivity
+
+# Start app & wait for breakpoint (debugging)
+adb shell am start -D com.example.app/.MainActivity
+
+# Get info about installed app
+adb shell dumpsys package com.example.app
+
+# Get app permissions
+adb shell dumpsys package com.example.app | grep android.permission
+```
+
+### Logging & Debugging
+
+```bash
+# View real-time device log
+adb logcat
+
+# Clear previous logs
+adb logcat -c
+
+# Filter by tag
+adb logcat | grep "mytag"
+
+# Filter by package (Android 4.1+)
+adb logcat --pid=$(adb shell pidof com.example.app)
+
+# Save logs to file
+adb logcat > device.log
+
+# View specific log level (I=Info, W=Warn, E=Error)
+adb logcat *:E   # Only errors
+adb logcat *:W   # Warnings and errors
+```
+
+### Sensitive Data Extraction
+
+```bash
+# Pull app database (if world-readable)
+adb pull /data/data/com.example.app/databases/app.db ./
+
+# List app's private storage
+adb shell ls -la /data/data/com.example.app/
+
+# Extract shared preferences (app settings)
+adb pull /data/data/com.example.app/shared_prefs/ ./
+
+# Extract cache
+adb pull /data/data/com.example.app/cache/ ./
+```
+
+---
+
+## 5.7 APK Decompilation — Static Analysis of Android Apps
+
+### Why Decompile?
+
+APK (Android Package) files are ZIP archives containing executable code + resources. Decompiling reveals:
+- Hardcoded secrets (API keys, credentials)
+- Logic flaws (bad crypto, skipped validations)
+- Vulnerable library usage
+- Hidden functionality
+
+### Decompile with Apktool (Smali Code)
+
+```bash
+# Install apktool
+sudo apt-get install apktool
+
+# Decompile APK to Smali bytecode
+apktool d app.apk
+
+# Output structure:
+app/
+├── AndroidManifest.xml     # App permissions & components
+├── smali/                  # Smali bytecode (readable)
+├── res/                    # Resources (images, strings)
+└── lib/                    # Native libraries (.so)
+
+# Recompile modified APK
+apktool b app/  # Creates app/dist/app.apk
+```
+
+### Decompile with Jadx (Readable Java Code)
+
+```bash
+# Install jadx
+sudo apt-get install jadx
+# OR download: https://github.com/skylot/jadx
+
+# Decompile to Java source
+jadx app.apk
+
+# Output:
+app/sources/com/example/app/*.java  # Readable Java code
+
+# View in GUI
+jadx-gui app.apk  # Opens interactive decompiler
+```
+
+### Extract Strings from APK
+
+```bash
+# Get all readable strings (often contains credentials, URLs, API keys)
+strings app.apk | grep -iE "password|api|http|admin|secret"
+
+# Use apktool's resource extraction
+apktool d app.apk
+grep -r "password\|api_key\|secret" app/res/
+
+# Use aapt (Android Asset Packaging Tool)
+aapt dump badging app.apk
+aapt dump strings app.apk
+```
+
+### Extract AndroidManifest.xml
+
+```bash
+# AndroidManifest.xml shows:
+# - App permissions (what it can access)
+# - Declared components (Activities, Services, Broadcast Receivers)
+# - App configuration
+
+# Extract with apktool
+apktool d app.apk
+cat app/AndroidManifest.xml
+
+# View permissions
+grep android:name="android.permission" app/AndroidManifest.xml
+
+# View exported activities (can be launched externally)
+grep -A 2 "activity" app/AndroidManifest.xml | grep -i "exported\|true"
+```
+
+### Static Analysis Checklist
+
+```
+Security issues to look for in decompiled code:
+
+[ ] Hardcoded credentials in strings/code
+[ ] API keys exposed in source
+[ ] Weak cryptography (MD5, DES, ECB mode)
+[ ] Hardcoded URLs/endpoints that shouldn't be there
+[ ] Exported activities/services without permission checks
+[ ] SQL injection in database queries
+[ ] Command injection via Runtime.exec()
+[ ] Insecure WebView settings (JavaScript enabled)
+[ ] Unencrypted preferences/database
+[ ] Backup enabled in manifest
+[ ] Debuggable=true in manifest (allows debugging/code inspection)
+```
+
+### Common Findings
+
+```
+Example 1: Hardcoded API Key
+// In decompiled code:
+public static final String API_KEY = "sk_live_<REDACTED>";  // real Stripe secret keys start with sk_live_ then ~24 chars
+
+Example 2: Weak Crypto
+Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+// ECB mode is insecure (patterns visible in ciphertext)
+
+Example 3: SQL Injection
+String query = "SELECT * FROM users WHERE id=" + userInput;
+// No parameterized query = injection possible
+
+Example 4: Exported Activity Without Permission
+<activity android:name=".AdminActivity" android:exported="true" />
+// Anyone can launch admin activity from another app
+```
+
+---
+
 ## See Also
 
 - **[Challenges](../challenges/all-challenges.html)**

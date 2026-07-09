@@ -32,11 +32,16 @@ plugins:
   - jekyll-github-metadata
   - jekyll-include-cache
 
-# Color scheme (light, dark, auto)
+# Color scheme (light, dark, auto) — toggle button injected via footer_custom.html
 color_scheme: light
+
+# One-click copy button on every code block (built-in just-the-docs feature)
+enable_copy_code_button: true
 
 # Just the Docs customization
 aux_links:
+  "⚡ Command Index":
+    - "/CEHv13-Practical/docs/command-index.html"
   "GitHub Repository":
     - "https://github.com/mrx-arafat/CEHv13-Practical"
   "ExamGuide.com":

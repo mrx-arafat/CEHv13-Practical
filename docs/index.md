@@ -24,7 +24,7 @@ This documentation is designed as an **open-book reference during your 6-hour pr
 - **Domain-by-domain breakdown** of all 7 exam domains with command syntax
 - **Real challenge examples** with step-by-step solutions
 - **Tools reference section** for quick command lookup
-- **Exam strategy** for time management and answer formatting
+- **Command Index** — every command on one searchable page
 - **Cross-referenced navigation** to jump between related topics
 
 **During the Exam:**
@@ -99,22 +99,11 @@ This documentation is designed as an **open-book reference during your 6-hour pr
 
 ---
 
-## Exam Strategy Overview
-
-### Time Allocation (6 Hours = 360 minutes)
-
-- **Hour 1-2 (Reconnaissance)**: Start NMAP scans, identify targets
-- **Hour 2-3 (Quick Wins)**: Enumeration, default credentials, file access
-- **Hour 3-4 (Credential Cracking)**: Hydra, Hashcat, web vulnerabilities
-- **Hour 4-5 (Advanced)**: Web exploitation, crypto, PE analysis
-- **Hour 5-6 (Finalization)**: Mobile, wireless, network analysis, cleanup
-
-### Critical Success Factors
+## Critical Success Factors
 
 1. **Exact Answer Format** - Case-sensitive, padding matters
 2. **Tool Mastery** - Know multiple methods for each task
-3. **Time Management** - Skip long challenges, return later
-4. **Documentation** - Write down findings for reference
+3. **Documentation** - Write down findings for reference
 
 ---
 

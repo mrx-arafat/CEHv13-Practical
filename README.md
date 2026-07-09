@@ -7,7 +7,6 @@
 - **20 Real Challenge Examples** - Step-by-step solutions
 - **7 Exam Domains** - 100% syllabus coverage
 - **85+ Tools Documented** - 250+ commands
-- **6-Hour Strategy** - Time management guide
 - **Professional Theme** - Clean, organized, searchable
 - **Mobile Friendly** - Access anywhere during exam
 
@@ -125,20 +124,6 @@ Use **Ctrl+F** in your browser/PDF reader to search for:
 ✅ **Tables** - Quick reference  
 ✅ **Links** - Cross-domain navigation  
 ✅ **Offline** - No internet required  
-
----
-
-## Exam Strategy
-
-**Total Time:** 6 hours (360 minutes)  
-**Passing:** 70% (14 out of 20 challenges)  
-**Per Challenge:** ~18 minutes average
-
-**Recommended Order:**
-1. **Easy (6 challenges):** Challenges 1, 2, 5, 6, 11, 14 = 18 min × 6 = 108 min
-2. **Medium (10 challenges):** Challenges 3, 4, 7, 8, 9, 12, 13, 15, 16, 18 = 18 min × 10 = 180 min
-3. **Hard (4 challenges):** Challenges 10, 17, 19, 20 = 20 min × 4 = 80 min
-4. **Review & Buffer:** 92 minutes
 
 ---
 

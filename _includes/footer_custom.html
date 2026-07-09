@@ -1,0 +1,27 @@
+<button id="theme-toggle" title="Toggle dark / light" aria-label="Toggle dark mode">🌙</button>
+<script>
+(function () {
+  // Apply saved theme after just-the-docs JS (jtd) is ready
+  function applySaved() {
+    if (typeof jtd === 'undefined') return;
+    var saved = localStorage.getItem('ceh-theme');
+    var btn = document.getElementById('theme-toggle');
+    if (saved === 'dark') {
+      jtd.setTheme('dark');
+      if (btn) btn.textContent = '☀️';
+    }
+  }
+  window.addEventListener('load', applySaved);
+
+  // Delegated click — survives whenever the button mounts
+  document.addEventListener('click', function (e) {
+    if (!e.target || e.target.id !== 'theme-toggle') return;
+    if (typeof jtd === 'undefined') return;
+    var isDark = jtd.getTheme() === 'dark';
+    var next = isDark ? 'light' : 'dark';
+    jtd.setTheme(next);
+    e.target.textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('ceh-theme', next);
+  });
+})();
+</script>
