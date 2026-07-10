@@ -8,12 +8,16 @@ has_children: false
 
 # CEH v13 Practical Exam - Complete Documentation
 
-**Version:** 2.0 - INTEGRATED WITH ENHANCEMENTS  
-**Last Updated:** June 22, 2026  
+**Version:** 3.0 — CEH.CYBERSPHERE scenario  
+**Last Updated:** July 11, 2026  
 **Status:** GitHub Pages Ready  
 **Exam Duration:** 6 Hours  
-**Passing Score:** 70% (14 out of 20 challenges)  
+**Passing Score:** 150 pts (15 out of 20 challenges)  
 **Certificate Validity:** 3 Years
+
+**Scenario:** Red-Team audit of **CEH.CYBERSPHERE** — segmented Militarized / Demilitarized enterprise network (AD-heavy).
+**Target networks:** `10.22.99.0/24` · `172.16.32.0/24` · `10.100.50.0/24` (`.1` / `.2` excluded on each).
+**Workstations:** EH-1 Parrot (`attacker` / `toor`) · EH-2 Windows 11 (`Admin` / `Pa$$w0rd`). Wordlists on EH-1 Desktop.
 
 ---
 

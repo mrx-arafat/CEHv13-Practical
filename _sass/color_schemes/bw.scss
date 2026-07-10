@@ -1,0 +1,32 @@
+// ============================================================
+// Custom just-the-docs color scheme: BLACK & WHITE
+// Selected via `color_scheme: bw` in _config.yml.
+// Overrides the theme's core palette variables → full monochrome.
+// ============================================================
+
+$body-background-color:        #ffffff;
+$sidebar-color:                #f6f6f6;
+$search-background-color:      #ffffff;
+$table-background-color:       #ffffff;
+$code-background-color:        #f4f4f4;
+$feedback-color:               #eaeaea;
+
+$body-text-color:              #1a1a1a;
+$body-heading-color:           #000000;
+$nav-child-link-color:         #3a3a3a;
+$search-result-preview-color:  #6b6b6b;
+$link-color:                   #000000;
+
+// Buttons → solid black
+$btn-primary-color:            #000000;
+$base-button-color:            #f0f0f0;
+
+// Borders / rules → neutral grey
+$border-color:                 #e0e0e0;
+
+// Grey accent used by callouts / labels → keep monochrome
+$grey-dk-000:                  #333333;
+$grey-dk-100:                  #262626;
+$grey-dk-200:                  #1a1a1a;
+$grey-dk-250:                  #141414;
+$grey-dk-300:                  #0d0d0d;

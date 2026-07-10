@@ -1,6 +1,6 @@
 # URGENT EXAM PREP — GAPS IDENTIFIED & PRIORITY STUDY GUIDE
 
-**Exam Tomorrow | 6 Hours | 14/20 Needed to Pass**
+**Exam Tomorrow | 6 Hours | 15/20 (150 pts) Needed to Pass**
 
 ---
 

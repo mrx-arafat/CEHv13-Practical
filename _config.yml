@@ -32,8 +32,9 @@ plugins:
   - jekyll-github-metadata
   - jekyll-include-cache
 
-# Color scheme (light, dark, auto) — toggle button injected via footer_custom.html
-color_scheme: light
+# Color scheme — custom monochrome black & white (_sass/color_schemes/bw.scss)
+# Dark toggle injected via footer_custom.html
+color_scheme: bw
 
 # One-click copy button on every code block (built-in just-the-docs feature)
 enable_copy_code_button: true
@@ -63,7 +64,7 @@ toc_levels: 2..3
 # Footer
 footer_content: |
   <strong>CEH v13 Practical Exam Study Manual</strong><br>
-  Created by <a href="https://www.arafatops.com" target="_blank" style="color: #667eea; font-weight: 600;">Easin Arafat</a><br>
+  Created by <a href="https://www.arafatops.com" target="_blank" style="color: #000000; font-weight: 600;">Easin Arafat</a><br>
   &copy; 2026 | 20 Challenges | 7 Domains | 85+ Tools | 6 Hours Exam<br>
   <small>Last updated: June 2026</small>
 

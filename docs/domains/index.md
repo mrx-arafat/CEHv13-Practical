@@ -137,6 +137,6 @@ This section contains detailed information about each of the 7 exam domains, inc
 
 ---
 
-**Remember:** You need 70% (14 out of 20) to pass. Focus on quality answers over quantity.
+**Remember:** You need 150 points — 15 out of 20 challenges — to pass. Focus on quality answers over quantity.
 
 Pick a domain above or start with the [Quick Start Guide](../quick-start/).

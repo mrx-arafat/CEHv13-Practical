@@ -1,11 +1,35 @@
 // ============================================================
-// CEH v13 Practical — Exam-day UX overrides
+// CEH v13 Practical — Exam-day UX overrides (BLACK & WHITE)
 // Pure CSS values only (no theme vars) so the Sass build never breaks.
+// Monochrome palette: ink, greys, paper. No color accents.
 // ============================================================
 
-// Brand accents
-$ceh-accent: #667eea;
-$ceh-accent-2: #764ba2;
+// Monochrome "accents" — black + neutral greys only
+$ink:        #000000;   // primary (was #667eea)
+$ink-soft:   #333333;   // hover / secondary (was #764ba2)
+$paper:      #ffffff;
+$grey-line:  rgba(0, 0, 0, 0.12);
+
+// ------------------------------------------------------------
+// 0. GLOBAL — force links / accents to monochrome
+// ------------------------------------------------------------
+a,
+a:visited {
+  color: $ink;
+}
+a:hover {
+  color: $ink-soft;
+}
+
+// just-the-docs primary buttons → solid black
+.btn-primary {
+  background: $ink;
+  color: $paper;
+  background-image: none;
+}
+.btn-primary:hover {
+  background: $ink-soft;
+}
 
 // ------------------------------------------------------------
 // 1. CODE BLOCKS — bigger, readable, copy-friendly
@@ -16,6 +40,7 @@ figure.highlight {
   font-size: 0.86rem;
   line-height: 1.55;
   border-radius: 8px;
+  border: 1px solid $grey-line;
 }
 
 // Long commands: scroll horizontally, never wrap-break mid-flag
@@ -27,23 +52,23 @@ div.highlighter-rouge pre {
   white-space: pre;
 }
 
-// Inline code — subtle highlight so it stands out in prose
+// Inline code — subtle grey highlight
 code.language-plaintext.highlighter-rouge {
-  background: rgba(102, 126, 234, 0.12);
-  color: #4b4fa6;
+  background: rgba(0, 0, 0, 0.06);
+  color: $ink;
   padding: 0.12em 0.4em;
   border-radius: 4px;
   font-size: 0.85em;
 }
 
 // ------------------------------------------------------------
-// 2. COPY BUTTON — always discoverable, branded
+// 2. COPY BUTTON — always discoverable, monochrome
 // ------------------------------------------------------------
 .code-example + .highlighter-rouge .copy-code,
 button.copy {
   opacity: 0.85 !important;   // visible even without hover (mobile / exam speed)
-  background: $ceh-accent;
-  color: #fff;
+  background: $ink;
+  color: $paper;
   border: none;
   border-radius: 6px;
   font-weight: 600;
@@ -53,12 +78,12 @@ button.copy {
 
 button.copy:hover {
   opacity: 1 !important;
-  background: $ceh-accent-2;
+  background: $ink-soft;
 }
 
-// "Copied!" feedback state
+// "Copied!" feedback — stays monochrome
 button.copy.copied {
-  background: #2e7d32;
+  background: $ink-soft;
 }
 
 // ------------------------------------------------------------
@@ -75,7 +100,6 @@ button.copy.copied {
   font-size: 0.95rem;
 }
 
-// Keyboard hint on the search box
 .search-input-wrap::after {
   content: "Ctrl/⌘ + F to search this page";
   display: none;
@@ -89,7 +113,7 @@ table {
 }
 
 th {
-  background: rgba(102, 126, 234, 0.10);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 // ------------------------------------------------------------
@@ -99,9 +123,9 @@ th {
   line-height: 1.4;
 }
 
-// Active page marker
+// Active page marker — black bar
 .nav-list .nav-list-item .nav-list-link.active {
-  border-left: 3px solid $ceh-accent;
+  border-left: 3px solid $ink;
   font-weight: 600;
 }
 
@@ -116,9 +140,9 @@ th {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: none;
-  background: $ceh-accent;
-  color: #fff;
+  border: 1px solid $ink;
+  background: $ink;
+  color: $paper;
   font-size: 20px;
   line-height: 46px;
   text-align: center;
@@ -128,27 +152,62 @@ th {
 }
 
 #theme-toggle:hover {
-  background: $ceh-accent-2;
+  background: $ink-soft;
   transform: scale(1.08);
 }
 
 // ------------------------------------------------------------
-// 7. DARK SCHEME polish (applied when jtd theme = dark)
-//    just-the-docs sets these via its own dark scheme; we only
-//    nudge code-block contrast for long exam-day reading.
+// 7. DARK SCHEME — monochrome inverted (paper on ink)
+//    Links / accents become white; keep pure greyscale.
 // ------------------------------------------------------------
 .dark-mode {
+  a,
+  a:visited {
+    color: #ffffff;
+  }
+  a:hover {
+    color: #cfcfcf;
+  }
+
+  .btn-primary {
+    background: #ffffff;
+    color: #000000;
+    background-image: none;
+  }
+  .btn-primary:hover {
+    background: #cfcfcf;
+  }
+
   .highlight,
   div.highlighter-rouge {
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.12);
   }
 
   code.language-plaintext.highlighter-rouge {
-    background: rgba(102, 126, 234, 0.22);
-    color: #b9bdf5;
+    background: rgba(255, 255, 255, 0.12);
+    color: #f2f2f2;
   }
 
   th {
-    background: rgba(102, 126, 234, 0.18);
+    background: rgba(255, 255, 255, 0.10);
+  }
+
+  button.copy {
+    background: #ffffff;
+    color: #000000;
+  }
+  button.copy:hover {
+    background: #cfcfcf;
+  }
+
+  #theme-toggle {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+  }
+
+  .nav-list .nav-list-item .nav-list-link.active {
+    border-left-color: #ffffff;
   }
 }

@@ -4,8 +4,9 @@
 
 🔗 **LIVE SITE:** https://mrx-arafat.github.io/CEHv13-Practical/docs/
 
-- **20 Real Challenge Examples** - Step-by-step solutions
+- **40 Challenge Walkthroughs** - live CEH.CYBERSPHERE exam pool (1–20) + legacy practice pool (21–40)
 - **7 Exam Domains** - 100% syllabus coverage
+- **Scenario:** CEH.CYBERSPHERE AD enterprise — subnets `10.22.99.0/24`, `172.16.32.0/24`, `10.100.50.0/24`
 - **85+ Tools Documented** - 250+ commands
 - **Professional Theme** - Clean, organized, searchable
 - **Mobile Friendly** - Access anywhere during exam

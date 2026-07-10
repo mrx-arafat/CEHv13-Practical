@@ -23,7 +23,7 @@ has_children: true
 | Fact | Details |
 |------|---------|
 | **Challenges** | 20 |
-| **Passing** | 70% (14 / 20) |
+| **Passing** | 150 pts (15 / 20) |
 | **Domains** | 7 |
 | **Tools** | 85+ (nmap, Hydra, Hashcat, Wireshark, ADB, aircrack-ng, …) |
 | **Format** | Open-book (this site is allowed) |
