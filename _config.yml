@@ -45,8 +45,6 @@ aux_links:
     - "/CEHv13-Practical/docs/command-index.html"
   "GitHub Repository":
     - "https://github.com/mrx-arafat/CEHv13-Practical"
-  "ExamGuide.com":
-    - "https://cehv13.examguide.com"
 
 aux_links_new_tab: true
 
@@ -65,8 +63,8 @@ toc_levels: 2..3
 footer_content: |
   <strong>CEH v13 Practical Exam Study Manual</strong><br>
   Created by <a href="https://www.arafatops.com" target="_blank" style="color: #000000; font-weight: 600;">Easin Arafat</a><br>
-  &copy; 2026 | 20 Challenges | 7 Domains | 85+ Tools | 6 Hours Exam<br>
-  <small>Last updated: June 2026</small>
+  &copy; 2026 | 40 Challenge Walkthroughs | 7 Domains | 85+ Tools | 6 Hours Exam<br>
+  <small>Last updated: July 2026</small>
 
 # Back to top link
 back_to_top: true

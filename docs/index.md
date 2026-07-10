@@ -8,9 +8,6 @@ has_children: false
 
 # CEH v13 Practical Exam - Complete Documentation
 
-**Version:** 3.0 — CEH.CYBERSPHERE scenario  
-**Last Updated:** July 11, 2026  
-**Status:** GitHub Pages Ready  
 **Exam Duration:** 6 Hours  
 **Passing Score:** 150 pts (15 out of 20 challenges)  
 **Certificate Validity:** 3 Years
